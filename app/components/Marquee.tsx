@@ -1,21 +1,14 @@
-export default function Marquee() {
-  const brands = [
-    "Norda Systems",
-    "·",
-    "Helix Atelier",
-    "·",
-    "Vault Capital",
-    "·",
-    "Orbita Health",
-    "·",
-    "Figment Studio",
-    "·",
-    "Marina & Co.",
-    "·",
-  ];
+const logos = [
+  { name: "Osteria Da Gianni", src: "/logo-osteria",    height: 38 },
+  { name: "Trigas Europa",     src: "/logo-trigas.png", height: 34 },
+  { name: "800 Ventana",       src: "/logo-800ventana", height: 44 },
+  { name: "Votti Studio",      src: "/logo-votti",      height: 28 },
+  { name: "Chrysos",           src: "/logo-Chrysos",    height: 72 },
+  { name: "GreenCloud",        src: "/logo-greenCloud.png", height: 72 },
+];
 
-  // Duplicate for seamless loop
-  const track = [...brands, ...brands];
+export default function Marquee() {
+  const track = [...logos, ...logos, ...logos, ...logos];
 
   return (
     <section
@@ -41,24 +34,24 @@ export default function Marquee() {
       </div>
       <div className="overflow-hidden">
         <div
-          className="flex gap-20 animate-marquee"
+          className="flex items-center gap-16 animate-marquee"
           style={{ width: "max-content" }}
         >
-          {track.map((item, i) => (
-            <span
+          {track.map((logo, i) => (
+            <img
               key={i}
+              src={logo.src}
+              alt={logo.name}
               style={{
-                fontFamily:
-                  "var(--font-instrument-serif), ui-serif, Georgia, serif",
-                fontSize: 28,
-                color: "var(--color-ink-2)",
-                letterSpacing: "0.02em",
-                whiteSpace: "nowrap",
-                opacity: 0.7,
+                height: logo.height ?? 36,
+                width: "auto",
+                maxWidth: 160,
+                objectFit: "contain",
+                opacity: 0.45,
+                flexShrink: 0,
+                filter: "brightness(0)",
               }}
-            >
-              {item}
-            </span>
+            />
           ))}
         </div>
       </div>

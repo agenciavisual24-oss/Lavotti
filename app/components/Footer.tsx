@@ -23,7 +23,7 @@ export default function Footer() {
     {
       title: "Contacto",
       links: [
-        { label: "hola@lovatti.io",      href: "mailto:hola@lovatti.io" },
+        { label: "Lovatti.agency@gmail.com",      href: "mailto:Lovatti.agency@gmail.com" },
         { label: "Agenda una llamada",   href: "#contacto" },
         { label: "Madrid · CDMX",        href: "#" },
       ],

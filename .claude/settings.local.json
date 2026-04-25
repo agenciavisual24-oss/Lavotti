@@ -6,7 +6,19 @@
       "Bash(unzip -o Lovatti.zip -d Lovatti_extracted)",
       "Bash(npx create-next-app@latest . --typescript --eslint --app --no-tailwind --no-src-dir --import-alias \"@/*\" --yes)",
       "Read(//Users/rafaelgavotti/Desktop/**)",
-      "Bash(npx create-next-app@latest lovatti --typescript --eslint --app --no-tailwind --no-src-dir --import-alias \"@/*\" --yes)"
+      "Bash(npx create-next-app@latest lovatti --typescript --eslint --app --no-tailwind --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(lsof -iTCP -sTCP:LISTEN)",
+      "Bash(npx tsc *)"
     ]
   }
 }

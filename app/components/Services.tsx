@@ -6,6 +6,7 @@ const services = [
   {
     num: "01",
     title: "Agentes de IA",
+    href: "/servicios/agentes-de-ia",
     desc: "Asistentes y workflows autónomos que cierran ciclos completos de ventas, soporte y operaciones.",
     icon: (
       <svg viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={1.2}>
@@ -17,6 +18,7 @@ const services = [
   {
     num: "02",
     title: "Marketing digital",
+    href: "/servicios/marketing-digital",
     desc: "Performance, paid media y contenido orquestado con datos en tiempo real para escalar canales.",
     icon: (
       <svg viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={1.2}>
@@ -27,6 +29,7 @@ const services = [
   {
     num: "03",
     title: "Branding & diseño",
+    href: "/servicios/branding-diseno",
     desc: "Sistemas de marca, identidad y producto que comunican el nivel real de tu negocio.",
     icon: (
       <svg viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={1.2}>
@@ -38,6 +41,7 @@ const services = [
   {
     num: "04",
     title: "Funnels & conversión",
+    href: "/servicios/funnels-conversion",
     desc: "Embudos, landings y experimentación continua para mover la aguja en CAC, LTV y CR.",
     icon: (
       <svg viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={1.2}>
@@ -100,7 +104,7 @@ export default function Services() {
           style={{ gap: 1, background: "var(--color-line)", border: "1px solid var(--color-line)", borderRadius: 18, overflow: "hidden" }}
         >
           {services.map((svc) => (
-            <ServiceCard key={svc.num} {...svc} />
+            <ServiceCard key={svc.num} num={svc.num} title={svc.title} desc={svc.desc} icon={svc.icon} href={svc.href} />
           ))}
         </motion.div>
       </div>
@@ -108,11 +112,12 @@ export default function Services() {
   );
 }
 
-function ServiceCard({ num, title, desc, icon }: { num: string; title: string; desc: string; icon: React.ReactNode }) {
+function ServiceCard({ num, title, desc, icon, href }: { num: string; title: string; desc: string; icon: React.ReactNode; href: string }) {
   return (
-    <article
-      className="group relative flex flex-col justify-between cursor-pointer transition-colors duration-300"
-      style={{ padding: "36px 28px", background: "var(--color-bone)", minHeight: 260 }}
+    <a
+      href={href}
+      className="group relative flex flex-col justify-between transition-colors duration-300"
+      style={{ padding: "36px 28px", background: "var(--color-bone)", minHeight: 260, textDecoration: "none" }}
       onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--color-paper)")}
       onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--color-bone)")}
     >
@@ -134,6 +139,6 @@ function ServiceCard({ num, title, desc, icon }: { num: string; title: string; d
       <span className="inline-flex items-center gap-2 mt-6 text-sm font-medium" style={{ color: "var(--color-ink)" }}>
         Conocer más →
       </span>
-    </article>
+    </a>
   );
 }

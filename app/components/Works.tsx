@@ -4,14 +4,22 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 const works = [
-  { num: "01", title: "Norda Systems",  tag: "SaaS B2B",          year: "2025", shot: "s1", url: "norda.systems" },
-  { num: "02", title: "Helix Atelier",  tag: "E-commerce de lujo", year: "2025", shot: "s2", url: "helixatelier.com" },
-  { num: "03", title: "Vault Capital",  tag: "Fintech",            year: "2026", shot: "s3", url: "vaultcapital.io" },
-  { num: "04", title: "Orbita Health",  tag: "Healthtech",         year: "2026", shot: "s4", url: "orbitahealth.com" },
-  { num: "05", title: "Figment Studio", tag: "Brand & producto",   year: "2026", shot: "s5", url: "figmentstudio.co" },
+  { num: "01", title: "Osteria Da Gianni", tag: "Restauración", year: "2025", shot: "s1", url: "osteriadagianni.es" },
+  { num: "02", title: "Trigas Europa", tag: "Logistica", year: "2024", shot: "s2", url: "https://trigaseuropa.com" },
+  { num: "03", title: "800 Ventana", tag: "Perfiles de aluminio", year: "2026", shot: "s3", url: "800ventana.com" },
+  { num: "04", title: "Votti Studio", tag: "Marketing", year: "2026", shot: "s4", url: "votti-studio-web-ikr3.vercel.app/" },
+  { num: "05", title: "SIMH", tag: "Taller", year: "2024", shot: "s5", url: "simh.es/" },
 ];
 
-const shotStyles: Record<string, string> = {
+const shotImages: Record<string, string> = {
+  s1: "/S1.png",
+  s2: "/S2.png",
+  s3: "/S3.png",
+  s4: "/S4.png",
+  s5: "/S5.png",
+};
+
+const shotFallbacks: Record<string, string> = {
   s1: "linear-gradient(135deg, #EDE6D6 0%, #D6E5F2 50%, #A8C7E6 100%)",
   s2: "linear-gradient(135deg, #FBF8F1 0%, #F5F1E8 50%, #EDE6D6 100%)",
   s3: "linear-gradient(135deg, #1A1A1F 0%, #2E2E36 60%, #6E9BC8 100%)",
@@ -138,7 +146,13 @@ export default function Works() {
                 {[1, 2, 3].map((d) => <span key={d} style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--color-ink-faint)", opacity: 0.5, display: "inline-block" }} />)}
                 <span className="ml-2 flex-1 truncate" style={{ fontFamily: "var(--font-jetbrains-mono), monospace", fontSize: 9, color: "var(--color-ink-dim)", letterSpacing: "0.06em" }}>https://{preview.url}</span>
               </div>
-              <div className="flex-1" style={{ background: shotStyles[preview.shot] }} />
+              {shotImages[preview.shot] ? (
+                <div className="flex-1 relative">
+                  <img src={shotImages[preview.shot]} alt="" className="absolute inset-0 w-full h-full object-cover object-top" />
+                </div>
+              ) : (
+                <div className="flex-1" style={{ background: shotFallbacks[preview.shot] }} />
+              )}
             </div>
           )}
         </div>

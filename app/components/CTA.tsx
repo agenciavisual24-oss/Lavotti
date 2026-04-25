@@ -89,7 +89,7 @@ export default function CTA() {
 
           <div className="relative z-10 flex gap-3.5 justify-center flex-wrap">
             <a
-              href="#"
+              href="https://calendar.app.google/onsZbjUXmqQJexZZ8"
               className="inline-flex items-center gap-2.5 px-[22px] py-[14px] rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-px"
               style={{
                 background: "var(--color-paper)",
@@ -100,7 +100,7 @@ export default function CTA() {
               Agenda una llamada <span>↗</span>
             </a>
             <a
-              href="mailto:hola@lovatti.io"
+              href="mailto:Lovatti.agency@gmail.com"
               className="inline-flex items-center gap-2.5 px-[22px] py-[14px] rounded-full text-sm font-medium transition-all duration-200"
               style={{
                 background: "transparent",
@@ -108,7 +108,7 @@ export default function CTA() {
                 color: "var(--color-paper)",
               }}
             >
-              hola@lovatti.io
+              Lovatti.agency@gmail.com
             </a>
           </div>
         </motion.div>

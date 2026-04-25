@@ -4,10 +4,10 @@ import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const cases = [
-  { tag: "SaaS B2B", metric: "+312%", kpi: "ROI sobre adquisición pagada", client: "Norda Systems", desc: "Sustituimos un equipo de SDRs con un agente que califica, agenda y enriquece el CRM en tiempo real.", footer: "12 SEMANAS · IA + PERFORMANCE" },
-  { tag: "E-commerce", metric: "+158%", kpi: "Leads cualificados / mes", client: "Helix Atelier", desc: "Rebrand, sistema de funnels y agente conversacional integrado en WhatsApp y Shopify para una marca de lujo.", footer: "16 SEMANAS · BRANDING + IA" },
-  { tag: "Fintech", metric: "−74%", kpi: "Tiempo de respuesta soporte", client: "Vault Capital", desc: "Agente de soporte tier-1 con escalado a humanos, conectado a Notion, Slack y el core bancario interno.", footer: "9 SEMANAS · IA + OPS" },
-  { tag: "Healthtech", metric: "×4.2", kpi: "Conversión en landing principal", client: "Orbita Health", desc: "Rediseño de marca, página de producto y experimentación CRO con tests semanales sobre cohortes reales.", footer: "10 SEMANAS · BRANDING + CRO" },
+  { tag: "  restauración", metric: "+87%", kpi: "interacción con el menú", client: "Osteria Da Gianni", desc: "De un menú en PDF a una experiencia digital completa. Web con menú interactivo, sistema de reservas y gestión directa de peticiones.", footer: "4 semanas · Web & Experiencia digital" },
+  { tag: "E-commerce", metric: "+158%", kpi: "Leads cualificados / mes", client: "Chrysos Aceites", desc: "Optimizamos un ecommerce gastronómico para mejorar su narrativa, diseño y conversión, impulsando sus ventas.", footer: "8 semanas · Ecommerce & Optimización" },
+  { tag: "BRANDING · SOCIAL MEDIA · EVENTOS", metric: "+90%", kpi: "engagement en redes", client: "Green Cloud Events", desc: "Creamos y gestionamos el branding y redes sociales de la marca, fortaleciendo su presencia digital.", footer: "4–6 semanas · Estrategia digital" },
+  { tag: "INDUSTRIAL · PRESENCIA DIGITAL", metric: "+74%", kpi: "Claridad en comunicación de servicios", client: "Trigas Europa", desc: "Simplificamos la comunicación digital de una empresa industrial, haciéndola clara y orientada a negocio B2B.", footer: "Web B2B · Industrial · UX" },
 ];
 
 const fadeUp = (delay = 0) => ({
