@@ -18,16 +18,10 @@ const fadeUp = (delay = 0) => ({
 
 export default function About() {
   return (
-    <section id="sobre" style={{ padding: "60px 0 140px" }}>
+    <section id="sobre" className="py-16 pb-24 md:py-16 md:pb-36">
       <div
-        className="mx-auto px-10"
-        style={{
-          maxWidth: "var(--maxw)",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 80,
-          alignItems: "center",
-        }}
+        className="mx-auto px-5 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center"
+        style={{ maxWidth: "var(--maxw)" }}
       >
         {/* Text */}
         <motion.div {...fadeUp(0)}>

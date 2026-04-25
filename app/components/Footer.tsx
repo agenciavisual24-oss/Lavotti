@@ -38,17 +38,12 @@ export default function Footer() {
         borderTop: "1px solid var(--color-line)",
       }}
     >
-      <div className="mx-auto px-10" style={{ maxWidth: "var(--maxw)" }}>
+      <div className="mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
         <div
-          className="mb-15"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.5fr 1fr 1fr 1fr",
-            gap: 48,
-          }}
+          className="mb-12 grid grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 md:gap-12"
         >
           {/* Brand */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <a
               href="#top"
               className="inline-flex items-center gap-3"

@@ -20,8 +20,7 @@ const services = [
     desc: "Performance, paid media y contenido orquestado con datos en tiempo real para escalar canales.",
     icon: (
       <svg viewBox="0 0 24 24" width={24} height={24} fill="none" stroke="currentColor" strokeWidth={1.2}>
-        <path d="M3 17l6-6 4 4 8-8" />
-        <path d="M14 7h7v7" />
+        <path d="M3 17l6-6 4 4 8-8" /><path d="M14 7h7v7" />
       </svg>
     ),
   },
@@ -58,40 +57,23 @@ const fadeUp = (delay = 0) => ({
 
 export default function Services() {
   return (
-    <section id="servicios" style={{ padding: "140px 0" }}>
-      <div className="mx-auto px-10" style={{ maxWidth: "var(--maxw)" }}>
+    <section id="servicios" className="py-24 md:py-36">
+      <div className="mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
+
         {/* Header */}
-        <div
-          className="grid gap-15 items-end mb-20"
-          style={{ gridTemplateColumns: "1fr 1fr" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-15 items-end mb-12 md:mb-20">
           <motion.div {...fadeUp(0)}>
             <span
               className="inline-flex items-center gap-2.5"
-              style={{
-                fontFamily: "var(--font-jetbrains-mono), monospace",
-                fontSize: 11,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "var(--color-ink-dim)",
-              }}
+              style={{ fontFamily: "var(--font-jetbrains-mono), monospace", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-ink-dim)" }}
             >
-              <span
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  background: "var(--color-sky-deep)",
-                  display: "inline-block",
-                }}
-              />
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-sky-deep)", display: "inline-block" }} />
               Servicios — 01
             </span>
             <h2
               style={{
-                fontFamily:
-                  "var(--font-instrument-serif), ui-serif, Georgia, serif",
-                fontSize: "clamp(40px, 4.6vw, 72px)",
+                fontFamily: "var(--font-instrument-serif), ui-serif, Georgia, serif",
+                fontSize: "clamp(36px, 4.6vw, 72px)",
                 lineHeight: 1,
                 letterSpacing: "-0.015em",
                 fontWeight: 400,
@@ -99,42 +81,23 @@ export default function Services() {
                 color: "var(--color-ink)",
               }}
             >
-              Cuatro disciplinas,
-              <br />
-              un solo{" "}
-              <em style={{ fontStyle: "italic", color: "var(--color-sky-deep)" }}>
-                sistema
-              </em>
-              .
+              Cuatro disciplinas,<br />un solo{" "}
+              <em style={{ fontStyle: "italic", color: "var(--color-sky-deep)" }}>sistema</em>.
             </h2>
           </motion.div>
           <motion.p
             {...fadeUp(0.08)}
-            style={{
-              color: "var(--color-ink-dim)",
-              fontSize: 16,
-              lineHeight: 1.6,
-              maxWidth: 380,
-              margin: "0 0 6px auto",
-            }}
+            style={{ color: "var(--color-ink-dim)", fontSize: 16, lineHeight: 1.6, maxWidth: 380, margin: 0 }}
           >
-            No vendemos servicios sueltos. Cada engagement combina las
-            disciplinas que tu negocio necesita en un solo sistema operativo.
+            No vendemos servicios sueltos. Cada engagement combina las disciplinas que tu negocio necesita en un solo sistema operativo.
           </motion.p>
         </div>
 
         {/* Grid */}
         <motion.div
           {...fadeUp(0.08)}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 1,
-            background: "var(--color-line)",
-            border: "1px solid var(--color-line)",
-            borderRadius: 18,
-            overflow: "hidden",
-          }}
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: 1, background: "var(--color-line)", border: "1px solid var(--color-line)", borderRadius: 18, overflow: "hidden" }}
         >
           {services.map((svc) => (
             <ServiceCard key={svc.num} {...svc} />
@@ -145,87 +108,30 @@ export default function Services() {
   );
 }
 
-function ServiceCard({
-  num,
-  title,
-  desc,
-  icon,
-}: {
-  num: string;
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-}) {
+function ServiceCard({ num, title, desc, icon }: { num: string; title: string; desc: string; icon: React.ReactNode }) {
   return (
     <article
       className="group relative flex flex-col justify-between cursor-pointer transition-colors duration-300"
-      style={{
-        padding: "48px 40px",
-        background: "var(--color-bone)",
-        minHeight: 300,
-      }}
-      onMouseEnter={(e) =>
-        ((e.currentTarget as HTMLElement).style.background =
-          "var(--color-paper)")
-      }
-      onMouseLeave={(e) =>
-        ((e.currentTarget as HTMLElement).style.background =
-          "var(--color-bone)")
-      }
+      style={{ padding: "36px 28px", background: "var(--color-bone)", minHeight: 260 }}
+      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--color-paper)")}
+      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--color-bone)")}
     >
       <div>
-        <div className="flex items-start justify-between gap-5 mb-8">
-          <span
-            style={{
-              fontFamily: "var(--font-jetbrains-mono), monospace",
-              fontSize: 11,
-              color: "var(--color-ink-faint)",
-              letterSpacing: "0.18em",
-            }}
-          >
-            {num}
-          </span>
+        <div className="flex items-start justify-between gap-5 mb-6">
+          <span style={{ fontFamily: "var(--font-jetbrains-mono), monospace", fontSize: 11, color: "var(--color-ink-faint)", letterSpacing: "0.18em" }}>{num}</span>
           <div
             className="grid place-items-center transition-all duration-300 group-hover:rotate-15"
-            style={{
-              width: 54,
-              height: 54,
-              borderRadius: "50%",
-              border: "1px solid var(--color-line-strong)",
-              color: "var(--color-ink)",
-            }}
+            style={{ width: 48, height: 48, borderRadius: "50%", border: "1px solid var(--color-line-strong)", color: "var(--color-ink)", flexShrink: 0 }}
           >
             {icon}
           </div>
         </div>
-        <h3
-          style={{
-            fontFamily:
-              "var(--font-instrument-serif), ui-serif, Georgia, serif",
-            fontSize: 32,
-            fontWeight: 400,
-            margin: "0 0 12px",
-            letterSpacing: "-0.015em",
-          }}
-        >
+        <h3 style={{ fontFamily: "var(--font-instrument-serif), ui-serif, Georgia, serif", fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 400, margin: "0 0 10px", letterSpacing: "-0.015em" }}>
           {title}
         </h3>
-        <p
-          style={{
-            margin: 0,
-            color: "var(--color-ink-dim)",
-            fontSize: 15,
-            lineHeight: 1.6,
-            maxWidth: 380,
-          }}
-        >
-          {desc}
-        </p>
+        <p style={{ margin: 0, color: "var(--color-ink-dim)", fontSize: 14, lineHeight: 1.6 }}>{desc}</p>
       </div>
-      <span
-        className="inline-flex items-center gap-2 mt-8 text-sm font-medium transition-all duration-200"
-        style={{ color: "var(--color-ink)" }}
-      >
+      <span className="inline-flex items-center gap-2 mt-6 text-sm font-medium" style={{ color: "var(--color-ink)" }}>
         Conocer más →
       </span>
     </article>

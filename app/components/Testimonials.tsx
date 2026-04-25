@@ -63,10 +63,10 @@ export default function Testimonials() {
   const current = data[idx];
 
   return (
-    <section id="testimonios" style={{ padding: "140px 0" }}>
-      <div className="mx-auto px-10" style={{ maxWidth: "var(--maxw)" }}>
+    <section id="testimonios" className="py-24 md:py-36">
+      <div className="mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
         {/* Header */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <motion.div {...fadeUp(0)}>
             <span
               className="inline-flex items-center gap-2.5"
@@ -116,7 +116,7 @@ export default function Testimonials() {
           style={{
             border: "1px solid var(--color-line)",
             borderRadius: 24,
-            padding: 72,
+            padding: "clamp(28px, 5vw, 72px)",
             background: "var(--color-paper)",
             minHeight: 340,
           }}
@@ -136,7 +136,7 @@ export default function Testimonials() {
           />
 
           {/* Controls */}
-          <div className="absolute top-9 right-9 flex gap-2">
+          <div className="absolute top-4 right-4 md:top-9 md:right-9 flex gap-2">
             <ArrowBtn dir="left"  onClick={() => go(idx - 1, true)} />
             <ArrowBtn dir="right" onClick={() => go(idx + 1, true)} />
           </div>
@@ -212,7 +212,7 @@ export default function Testimonials() {
           </div>
 
           {/* Dots */}
-          <div className="absolute bottom-9 right-9 flex gap-2 items-center">
+          <div className="absolute bottom-4 right-4 md:bottom-9 md:right-9 flex gap-2 items-center">
             {data.map((_, k) => (
               <button
                 key={k}

@@ -11,14 +11,14 @@ const fadeUp = (delay = 0) => ({
 
 export default function CTA() {
   return (
-    <section id="contacto" style={{ padding: "0 0 140px" }}>
-      <div className="mx-auto px-10" style={{ maxWidth: "var(--maxw)" }}>
+    <section id="contacto" className="pb-24 md:pb-36">
+      <div className="mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
         <motion.div
           {...fadeUp(0)}
           className="relative text-center overflow-hidden"
           style={{
             borderRadius: 32,
-            padding: "120px 64px",
+            padding: "clamp(48px, 8vw, 120px) clamp(24px, 5vw, 64px)",
             background: "var(--color-ink)",
             color: "var(--color-paper)",
           }}
