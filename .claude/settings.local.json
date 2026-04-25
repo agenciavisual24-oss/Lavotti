@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/rafaelgavotti/Downloads/**)",
+      "Bash(unzip -l Lovatti.zip)",
+      "Bash(unzip -o Lovatti.zip -d Lovatti_extracted)",
+      "Bash(npx create-next-app@latest . --typescript --eslint --app --no-tailwind --no-src-dir --import-alias \"@/*\" --yes)",
+      "Read(//Users/rafaelgavotti/Desktop/**)",
+      "Bash(npx create-next-app@latest lovatti --typescript --eslint --app --no-tailwind --no-src-dir --import-alias \"@/*\" --yes)"
+    ]
+  }
+}
