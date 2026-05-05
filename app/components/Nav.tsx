@@ -17,7 +17,6 @@ export default function Nav() {
 
   const navLink = (section: string) => isHome ? `#${section}` : `/#${section}`;
   const textColor = (!isHome && !scrolled) ? "var(--color-paper)" : "var(--color-ink-2)";
-  const logoColor = (!isHome && !scrolled) ? "var(--color-paper)" : "var(--color-ink)";
 
   return (
     <nav
@@ -31,13 +30,32 @@ export default function Nav() {
       <div className="flex items-center justify-between gap-4 mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
         <a
           href="/"
-          className="flex items-center gap-3"
-          style={{ fontFamily: "var(--font-instrument-serif), ui-serif, Georgia, serif", fontSize: "24px", fontWeight: 400, letterSpacing: "-0.01em", color: logoColor }}
+          className="flex items-center gap-2.5"
+          style={{ textDecoration: "none" }}
         >
-          <span className="relative" style={{ width: 24, height: 24, borderRadius: "50%", background: "var(--color-ink)", display: "inline-block" }}>
-            <span className="absolute" style={{ inset: 6, borderRadius: "50%", background: "var(--color-sky)" }} />
-          </span>
-          Lovatti
+          <img
+            src="/Logo-Lovatti-sin-texto.png"
+            alt=""
+            aria-hidden="true"
+            style={{
+              height: 44,
+              width: "auto",
+              display: "block",
+              filter: (!isHome && !scrolled) ? "invert(1) brightness(2)" : "brightness(0)",
+              transition: "filter 0.3s",
+            }}
+          />
+          <img
+            src="/Logo-Lovatti-con-letra.png"
+            alt="Lovatti Studio"
+            style={{
+              height: 22,
+              width: "auto",
+              display: "block",
+              filter: (!isHome && !scrolled) ? "invert(1) brightness(2)" : "brightness(0)",
+              transition: "filter 0.3s",
+            }}
+          />
         </a>
 
         <div className="hidden md:flex gap-9">
