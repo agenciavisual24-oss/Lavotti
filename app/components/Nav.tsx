@@ -17,27 +17,49 @@ export default function Nav() {
 
   const navLink = (section: string) => isHome ? `#${section}` : `/#${section}`;
   const textColor = (!isHome && !scrolled) ? "var(--color-paper)" : "var(--color-ink-2)";
-  const logoColor = (!isHome && !scrolled) ? "var(--color-paper)" : "var(--color-ink)";
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 py-5 transition-all duration-300"
-      style={
-        scrolled
-          ? { background: "rgba(245,241,232,0.78)", backdropFilter: "blur(14px) saturate(140%)", borderBottom: "1px solid rgba(26,26,31,0.10)", paddingTop: "14px", paddingBottom: "14px" }
-          : undefined
-      }
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        height: 64,
+        display: "flex",
+        alignItems: "center",
+        background: scrolled ? "rgba(245,241,232,0.78)" : "transparent",
+        backdropFilter: scrolled ? "blur(14px) saturate(140%)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(26,26,31,0.10)" : "1px solid transparent",
+        transition: "background 0.3s, border-color 0.3s, backdrop-filter 0.3s",
+      }}
     >
-      <div className="flex items-center justify-between gap-4 mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
+      <div className="flex items-center justify-between gap-4 w-full mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
         <a
           href="/"
-          className="flex items-center gap-3"
-          style={{ fontFamily: "var(--font-instrument-serif), ui-serif, Georgia, serif", fontSize: "24px", fontWeight: 400, letterSpacing: "-0.01em", color: logoColor }}
+          className="flex items-center gap-2"
+          style={{ textDecoration: "none" }}
         >
-          <span className="relative" style={{ width: 24, height: 24, borderRadius: "50%", background: "var(--color-ink)", display: "inline-block" }}>
-            <span className="absolute" style={{ inset: 6, borderRadius: "50%", background: "var(--color-sky)" }} />
-          </span>
-          Lovatti
+          <img
+            src="/Logo-Lovatti-sin-texto.png"
+            alt=""
+            aria-hidden="true"
+            style={{
+              height: 36,
+              width: "auto",
+              display: "block",
+              filter: (!isHome && !scrolled) ? "invert(1) brightness(2)" : "brightness(0)",
+              transition: "filter 0.3s",
+            }}
+          />
+          <img
+            src="/Logo-Lovatti-con-letra.png"
+            alt="Lovatti Studio"
+            style={{
+              height: 18,
+              width: "auto",
+              display: "block",
+              filter: (!isHome && !scrolled) ? "invert(1) brightness(2)" : "brightness(0)",
+              transition: "filter 0.3s",
+            }}
+          />
         </a>
 
         <div className="hidden md:flex gap-9">

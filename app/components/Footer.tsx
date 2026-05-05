@@ -46,35 +46,20 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a
               href="#top"
-              className="inline-flex items-center gap-3"
-              style={{
-                fontFamily:
-                  "var(--font-instrument-serif), ui-serif, Georgia, serif",
-                fontSize: 24,
-                fontWeight: 400,
-                letterSpacing: "-0.01em",
-              }}
+              className="inline-flex items-center gap-2.5"
+              style={{ textDecoration: "none" }}
             >
-              <span
-                className="relative"
-                style={{
-                  width: 24,
-                  height: 24,
-                  borderRadius: "50%",
-                  background: "var(--color-ink)",
-                  display: "inline-block",
-                }}
-              >
-                <span
-                  className="absolute"
-                  style={{
-                    inset: 6,
-                    borderRadius: "50%",
-                    background: "var(--color-sky)",
-                  }}
-                />
-              </span>
-              Lovatti
+              <img
+                src="/Logo-Lovatti-sin-texto.png"
+                alt=""
+                aria-hidden="true"
+                style={{ height: 44, width: "auto", display: "block", filter: "brightness(0)" }}
+              />
+              <img
+                src="/Logo-Lovatti-con-letra.png"
+                alt="Lovatti Studio"
+                style={{ height: 22, width: "auto", display: "block", filter: "brightness(0)" }}
+              />
             </a>
             <p
               style={{

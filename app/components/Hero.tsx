@@ -84,7 +84,7 @@ function ParticleField() {
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}
+      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", background: "transparent" }}
     />
   );
 }
@@ -228,10 +228,10 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.2, ease }}
           ref={orbitRef}
           className="relative w-full mx-auto hidden sm:block lg:ml-auto"
-          style={{ aspectRatio: "1/1", maxWidth: 480, perspective: 900 }}
+          style={{ aspectRatio: "1/1", maxWidth: 480 }}
           aria-hidden="true"
         >
-          <motion.div style={{ rotateX, rotateY, width: "100%", height: "100%", position: "relative" }}>
+          <motion.div style={{ rotateX, rotateY, width: "100%", height: "100%", position: "relative", perspective: 900 }}>
             <ParticleField />
 
             <div
@@ -253,9 +253,13 @@ export default function Hero() {
 
             <div
               className="absolute animate-wobble grid place-items-center rounded-full"
-              style={{ top: "50%", left: "50%", width: "34%", height: "34%", transform: "translate(-50%,-50%)", background: "rgb(60,58,58)", color: "var(--color-paper)", fontFamily: "var(--font-instrument-serif), ui-serif, Georgia, serif", fontSize: 22, letterSpacing: "0.04em", boxShadow: "0 20px 50px -10px rgba(26,26,31,.4)" }}
+              style={{ top: "50%", left: "50%", width: "34%", height: "34%", transform: "translate(-50%,-50%)", background: "rgb(60,58,58)", boxShadow: "0 20px 50px -10px rgba(26,26,31,.4)" }}
             >
-              <span className="relative">L</span>
+              <img
+                src="/Logo-Lovatti-sin-texto.png"
+                alt="Lovatti"
+                style={{ width: "58%", height: "auto", filter: "invert(1) brightness(2)" }}
+              />
             </div>
 
             {[
