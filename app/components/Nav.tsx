@@ -20,12 +20,15 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50"
       style={{
         height: 64,
         display: "flex",
         alignItems: "center",
-        ...(scrolled ? { background: "rgba(245,241,232,0.78)", backdropFilter: "blur(14px) saturate(140%)", borderBottom: "1px solid rgba(26,26,31,0.10)" } : {}),
+        background: scrolled ? "rgba(245,241,232,0.78)" : "transparent",
+        backdropFilter: scrolled ? "blur(14px) saturate(140%)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(26,26,31,0.10)" : "1px solid transparent",
+        transition: "background 0.3s, border-color 0.3s, backdrop-filter 0.3s",
       }}
     >
       <div className="flex items-center justify-between gap-4 w-full mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
