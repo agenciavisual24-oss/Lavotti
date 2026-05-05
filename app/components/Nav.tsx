@@ -20,17 +20,18 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 py-5 transition-all duration-300"
-      style={
-        scrolled
-          ? { background: "rgba(245,241,232,0.78)", backdropFilter: "blur(14px) saturate(140%)", borderBottom: "1px solid rgba(26,26,31,0.10)", paddingTop: "14px", paddingBottom: "14px" }
-          : undefined
-      }
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        height: 64,
+        display: "flex",
+        alignItems: "center",
+        ...(scrolled ? { background: "rgba(245,241,232,0.78)", backdropFilter: "blur(14px) saturate(140%)", borderBottom: "1px solid rgba(26,26,31,0.10)" } : {}),
+      }}
     >
-      <div className="flex items-center justify-between gap-4 mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
+      <div className="flex items-center justify-between gap-4 w-full mx-auto px-5 md:px-10" style={{ maxWidth: "var(--maxw)" }}>
         <a
           href="/"
-          className="flex items-center gap-2.5"
+          className="flex items-center gap-2"
           style={{ textDecoration: "none" }}
         >
           <img
@@ -38,7 +39,7 @@ export default function Nav() {
             alt=""
             aria-hidden="true"
             style={{
-              height: 44,
+              height: 36,
               width: "auto",
               display: "block",
               filter: (!isHome && !scrolled) ? "invert(1) brightness(2)" : "brightness(0)",
@@ -49,7 +50,7 @@ export default function Nav() {
             src="/Logo-Lovatti-con-letra.png"
             alt="Lovatti Studio"
             style={{
-              height: 22,
+              height: 18,
               width: "auto",
               display: "block",
               filter: (!isHome && !scrolled) ? "invert(1) brightness(2)" : "brightness(0)",
