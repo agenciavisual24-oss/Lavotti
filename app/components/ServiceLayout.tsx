@@ -157,8 +157,8 @@ export default function ServiceLayout({ tag, title, titleEm, subtitle, features,
               <a href="https://calendar.app.google/onsZbjUXmqQJexZZ8" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 px-[22px] py-[14px] rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-px" style={{ background: "var(--color-paper)", color: "var(--color-ink)" }}>
                 Agenda una llamada ↗
               </a>
-              <a href="mailto:Lovatti.agency@gmail.com" className="inline-flex items-center gap-2.5 px-[22px] py-[14px] rounded-full text-sm font-medium" style={{ border: "1px solid rgba(245,248,241,.25)", color: "var(--color-paper)" }}>
-                Lovatti.agency@gmail.com
+              <a href="mailto:info@lovattistudio.com" className="inline-flex items-center gap-2.5 px-[22px] py-[14px] rounded-full text-sm font-medium" style={{ border: "1px solid rgba(245,248,241,.25)", color: "var(--color-paper)" }}>
+                info@lovattistudio.com
               </a>
             </div>
           </motion.div>
