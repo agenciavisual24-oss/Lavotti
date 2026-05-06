@@ -100,7 +100,7 @@ export default function CTA() {
               Agenda una llamada <span>↗</span>
             </a>
             <a
-              href="mailto:Lovatti.agency@gmail.com"
+              href="mailto:info@lovattistudio.com"
               className="inline-flex items-center gap-2.5 px-[22px] py-[14px] rounded-full text-sm font-medium transition-all duration-200"
               style={{
                 background: "transparent",
@@ -108,7 +108,7 @@ export default function CTA() {
                 color: "var(--color-paper)",
               }}
             >
-              Lovatti.agency@gmail.com
+              info@lovattistudio.com
             </a>
           </div>
         </motion.div>
